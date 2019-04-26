@@ -16,8 +16,12 @@ RUN apk --update --no-cache add \
         fontconfig
 
 RUN curl -q -o "/tmp/sarabun-fonts.zip" -LO https://github.com/cadsondemak/Sarabun/archive/master.zip && \
+    curl -q -o "/tmp/sarabun-new.zip" -LO https://github.com/dahoba/tomcat-pcks11-proxy/raw/master/8-alpine-fonts/THSarabunNew.zip && \
+    curl -q -o "/tmp/sarabun-psk.zip" -LO https://github.com/dahoba/tomcat-pcks11-proxy/raw/master/8-alpine-fonts/THSarabunPSK.zip && \
     unzip /tmp/sarabun-fonts.zip -d /tmp/ && \
     mkdir -p /usr/share/fonts/ && \
+    unzip /tmp/sarabun-new.zip -d /usr/share/fonts/ && \
+    unzip /tmp/sarabun-psk.zip -d /usr/share/fonts/ && \
     cp /tmp/Sarabun-master/fonts/*.ttf /usr/share/fonts/ && \
     fc-cache -f
 
