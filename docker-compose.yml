@@ -12,6 +12,8 @@ services:
     build: .    
 #    volumes:
 #      - "/path/to/wepapp-1.0.0.war:/usr/local/tomcat/webapps/wepapp-1.0.0.war"
+
+
 #      - "/path/to/logs:/usr/local/tomcat/logs"
     environment:
       PKCS11_PROXY_SOCKET: "tcp://softhsm:5657"
